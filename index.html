@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Repository Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="finder">
+      <div class="brand">
+        <div class="github-mark" aria-hidden="true">⌘</div>
+        <div>
+          <p class="eyebrow">API PROJECT</p>
+          <h1>GitHub Repository Finder</h1>
+          <p class="subtitle">
+            Choose a programming language and discover a random public repository.
+          </p>
+        </div>
+      </div>
+
+      <label for="languageSelect">Programming language</label>
+      <select id="languageSelect">
+        <option value="">Select a language</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="TypeScript">TypeScript</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+        <option value="C#">C#</option>
+        <option value="PHP">PHP</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Go">Go</option>
+        <option value="Rust">Rust</option>
+      </select>
+
+      <section id="statusBox" class="status-box initial" aria-live="polite">
+        <p id="statusMessage">Select a language to find a repository.</p>
+      </section>
+
+      <article id="repositoryCard" class="repo-card hidden">
+        <div class="repo-heading">
+          <div>
+            <p id="repoLanguage" class="repo-language"></p>
+            <h2 id="repoName"></h2>
+          </div>
+          <a
+            id="repoLink"
+            class="repo-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open on GitHub
+          </a>
+        </div>
+
+        <p id="repoDescription" class="repo-description"></p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-icon">★</span>
+            <div>
+              <span id="repoStars" class="stat-value">0</span>
+              <span class="stat-label">Stars</span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <span class="stat-icon">⑂</span>
+            <div>
+              <span id="repoForks" class="stat-value">0</span>
+              <span class="stat-label">Forks</span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <span class="stat-icon">!</span>
+            <div>
+              <span id="repoIssues" class="stat-value">0</span>
+              <span class="stat-label">Open issues</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <button id="anotherButton" class="another-button hidden" type="button">
+        Find Another Repository
+      </button>
+
+      <p class="footer-note">Data provided by the GitHub REST API.</p>
+    </section>
+  </main>
+
+  <!-- Person 2: API code must load before Person 3's app logic. -->
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
